@@ -100,8 +100,32 @@ class AddViewController: UIViewController {
                 self.recognitionRequest?.append(buffer)
         }
         
-        //TODO: transform speech input to text
-        //task...
+        //tansform speech to text
+        recognitionTask = speechRecognizer.recognitionTask(with: recognitionRequest,
+                                                           resultHandler: { (result, error) in
+            //remember: this is result handler! called in the end!, not now
+            //stop recording
+            self.audioEngine.stop()
+            inputNode.removeTap(onBus: 0)
+            
+            self.recognitionRequest = nil
+            self.recognitionTask = nil
+            
+            guard error == nil else {
+                //todo: alert
+                print("Could not create transcript")
+                return
+            }
+            
+            if let result = result {
+                //call completion handler from transcript method and get string
+                withHandler(result.bestTranscription.formattedString)
+            }
+        })
+        
+        
+        audioEngine.prepare()
+        try audioEngine.start()
         
     }
     
