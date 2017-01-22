@@ -85,6 +85,9 @@
                                                             <constraint firstAttribute="height" constant="44" id="mtc-UP-kB6"/>
                                                         </constraints>
                                                         <state key="normal" title="Button" image="micro-default"/>
+                                                        <connections>
+                                                            <action selector="nameButtonTapped:" destination="Jma-fo-h2L" eventType="touchUpInside" id="V6U-W8-tsU"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -115,6 +118,9 @@
                                                             <constraint firstAttribute="width" constant="44" id="qGq-dl-X6r"/>
                                                         </constraints>
                                                         <state key="normal" title="Button" image="micro-default"/>
+                                                        <connections>
+                                                            <action selector="urlButtonTapped:" destination="Jma-fo-h2L" eventType="touchUpInside" id="erg-WG-7mG"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
