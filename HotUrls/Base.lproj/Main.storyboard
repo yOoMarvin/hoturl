@@ -45,10 +45,10 @@
             </objects>
             <point key="canvasLocation" x="664.79999999999995" y="81.409295352323838"/>
         </scene>
-        <!--View Controller-->
+        <!--Add View Controller-->
         <scene sceneID="iuU-po-MEf">
             <objects>
-                <viewController id="Jma-fo-h2L" sceneMemberID="viewController">
+                <viewController id="Jma-fo-h2L" customClass="AddViewController" customModule="HotUrls" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Lao-Yh-TA2"/>
                         <viewControllerLayoutGuide type="bottom" id="YYd-yv-EW8"/>
@@ -123,6 +123,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HLh-n2-HuN">
                                         <rect key="frame" x="0.0" y="225" width="343" height="30"/>
                                         <state key="normal" title="Speichern"/>
+                                        <connections>
+                                            <action selector="saveTapped:" destination="Jma-fo-h2L" eventType="touchUpInside" id="Rpv-fh-kvk"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -134,6 +137,12 @@
                             <constraint firstItem="pK4-xz-dlQ" firstAttribute="top" secondItem="Lao-Yh-TA2" secondAttribute="bottom" constant="8" id="NfW-Xo-k2l"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="nameAudioBtn" destination="eR0-p1-blY" id="hfE-9h-d9C"/>
+                        <outlet property="nameInput" destination="up7-NU-Vtd" id="yPJ-9h-mNH"/>
+                        <outlet property="urlAudioBtn" destination="NQ0-RN-w4G" id="M0X-Yf-ONB"/>
+                        <outlet property="urlInput" destination="bJ0-66-exE" id="O1P-1t-A4d"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rae-cr-wcs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
