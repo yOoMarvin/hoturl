@@ -16,6 +16,7 @@
 		58046C1D1E33CA2A00590FFB /* UrlResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58046C1C1E33CA2A00590FFB /* UrlResource.swift */; };
 		58046C1F1E33CA5200590FFB /* ArrayResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58046C1E1E33CA5200590FFB /* ArrayResource.swift */; };
 		58046C211E34E88700590FFB /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58046C201E34E88700590FFB /* AddViewController.swift */; };
+		58046C231E36781600590FFB /* HotUrlDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58046C221E36781600590FFB /* HotUrlDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		58046C1C1E33CA2A00590FFB /* UrlResource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UrlResource.swift; sourceTree = "<group>"; };
 		58046C1E1E33CA5200590FFB /* ArrayResource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayResource.swift; sourceTree = "<group>"; };
 		58046C201E34E88700590FFB /* AddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
+		58046C221E36781600590FFB /* HotUrlDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HotUrlDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 				58046C1A1E33C9D900590FFB /* HotUrl.swift */,
 				58046C1C1E33CA2A00590FFB /* UrlResource.swift */,
 				58046C1E1E33CA5200590FFB /* ArrayResource.swift */,
+				58046C221E36781600590FFB /* HotUrlDelegate.swift */,
 			);
 			name = model;
 			sourceTree = "<group>";
@@ -185,6 +188,7 @@
 				58046C071E33C71100590FFB /* UrlListTableViewController.swift in Sources */,
 				58046C211E34E88700590FFB /* AddViewController.swift in Sources */,
 				58046C051E33C71100590FFB /* AppDelegate.swift in Sources */,
+				58046C231E36781600590FFB /* HotUrlDelegate.swift in Sources */,
 				58046C1F1E33CA5200590FFB /* ArrayResource.swift in Sources */,
 				58046C1D1E33CA2A00590FFB /* UrlResource.swift in Sources */,
 			);

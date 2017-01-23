@@ -45,5 +45,20 @@ class UrlListTableViewController: UITableViewController {
         return cell
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "addUrl" {
+            let dst = segue.destination as! AddViewController
+            dst.delegate = self
+        }
+    }
+    
+}
+
+extension UrlListTableViewController: HotUrlDelegate {
+    
+    func hotUrlAdded(withName:String, andUrl: String){
+        let newUrl = HotUrl(name: withName, url: andUrl)
+        urlList.append(newUrl)
+    }
 }
 

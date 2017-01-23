@@ -10,6 +10,8 @@ import UIKit
 import Speech
 
 class AddViewController: UIViewController {
+    
+    var delegate: HotUrlDelegate?
 
     
     //speech input handled in controller here... 
@@ -38,6 +40,12 @@ class AddViewController: UIViewController {
     }
     
     @IBAction func saveTapped(_ sender: Any) {
+        guard let name = nameInput.text, let url = urlInput.text else {
+            print("name or url not set")
+            return
+        }
+        delegate?.hotUrlAdded(withName: name, andUrl: url)
+        let _ = navigationController?.popViewController(animated: true)
     }
     
     //help functions for changing the button graphic when recording
