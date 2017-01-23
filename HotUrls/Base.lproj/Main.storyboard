@@ -26,6 +26,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="QKd-1N-ieb" kind="show" identifier="detailView" id="NZd-Ej-CZJ"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -153,6 +156,38 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rae-cr-wcs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1613.5999999999999" y="80.50974512743629"/>
+        </scene>
+        <!--Url View Controller-->
+        <scene sceneID="qQe-eb-rMj">
+            <objects>
+                <viewController id="QKd-1N-ieb" customClass="UrlViewController" customModule="HotUrls" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hAo-6S-CEj"/>
+                        <viewControllerLayoutGuide type="bottom" id="uHO-bC-ThU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="sMm-3l-x6H">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cn5-5x-6eC">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="cn5-5x-6eC" secondAttribute="trailing" id="Dfg-ZP-KId"/>
+                            <constraint firstItem="cn5-5x-6eC" firstAttribute="top" secondItem="hAo-6S-CEj" secondAttribute="bottom" id="bZU-yz-YQb"/>
+                            <constraint firstItem="cn5-5x-6eC" firstAttribute="leading" secondItem="sMm-3l-x6H" secondAttribute="leading" id="mTd-EL-6yo"/>
+                            <constraint firstItem="uHO-bC-ThU" firstAttribute="top" secondItem="cn5-5x-6eC" secondAttribute="bottom" id="zDY-Kj-Yzf"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="cn5-5x-6eC" id="haz-sd-rEv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gGa-xp-L6q" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1613.5999999999999" y="854.1229385307347"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="RjG-3X-3AW">
