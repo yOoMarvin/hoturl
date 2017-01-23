@@ -38,6 +38,11 @@
 	<string>Speech input needs the mic...</string>
 	<key>NSSpeechRecognitionUsageDescription</key>
 	<string>Speech input must be transformed to text</string>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoadsInWebContent</key>
+		<true/>
+	</dict>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
