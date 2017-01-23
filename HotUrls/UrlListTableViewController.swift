@@ -45,10 +45,19 @@ class UrlListTableViewController: UITableViewController {
         return cell
     }
     
+    //segue (actions)
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "addUrl" {
             let dst = segue.destination as! AddViewController
             dst.delegate = self
+        }
+        if segue.identifier == "detailView" {
+            let dst = segue.destination as! UrlViewController
+            guard let indexPath = tableView.indexPathForSelectedRow else {
+                //early exit
+                return
+            }
+            dst.hotUrl = urlList[indexPath.row]
         }
     }
     
