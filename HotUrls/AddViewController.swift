@@ -48,6 +48,14 @@ class AddViewController: UIViewController {
         let _ = navigationController?.popViewController(animated: true)
     }
     
+    //error function for showing error as an alert
+    private func showError(_ errorMsg: String) {
+        let alert = UIAlertController(title: "Fehler", message: errorMsg, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        present(alert, animated: true, completion: nil)
+        
+    }
+    
     //help functions for changing the button graphic when recording
     private func setRecordingImage(forButton: UIButton){
         forButton.setImage(UIImage(named:"micro-recording"), for: .normal)
@@ -80,8 +88,8 @@ class AddViewController: UIViewController {
                 forField.text = transcript
             }
             } catch let error as NSError {
-                //todo: give error with alert
-                print(error.localizedDescription)
+                //show error as alert                
+                showError(error.localizedDescription)
                 
                 //set the button to default
                 setDefaultImage(forButton: andButton)
@@ -108,8 +116,8 @@ class AddViewController: UIViewController {
         recognitionRequest = SFSpeechAudioBufferRecognitionRequest()
         
         guard let inputNode = audioEngine.inputNode else {
-            //todo: alert
-            print("no input node found")
+            //alert
+            self.showError("no input node found")
             //reset buttons
             self.resetButtons()
             return
@@ -143,8 +151,8 @@ class AddViewController: UIViewController {
             self.recognitionTask = nil
             
             guard error == nil else {
-                //todo: alert
-                print("Could not create transcript")
+                //alert
+                self.showError("Could not create transcript")
                 //reset buttons
                 self.resetButtons()
                 return
