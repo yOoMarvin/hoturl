@@ -40,22 +40,43 @@ class AddViewController: UIViewController {
     @IBAction func saveTapped(_ sender: Any) {
     }
     
+    //help functions for changing the button graphic when recording
+    private func setRecordingImage(forButton: UIButton){
+        forButton.setImage(UIImage(named:"micro-recording"), for: .normal)
+    }
+    private func setDefaultImage(forButton: UIButton){
+        forButton.setImage(UIImage(named:"micro-default"), for: .normal)
+    }
+    private func resetButtons() {
+        setDefaultImage(forButton: nameAudioBtn)
+        setRecordingImage(forButton: urlAudioBtn)
+    }
+    
     
     private func speechInput(forField: UITextField, andButton: UIButton) {
         //if audio is running, stop it
         if audioEngine.isRunning{
             audioEngine.stop()
             recognitionRequest?.endAudio()
+            //set default image, when recording is stopped
+            setDefaultImage(forButton: andButton)
         } else {
+            //start recording process, set button to recording
+            setRecordingImage(forButton: andButton)
             do {
             try getTranscription{
                 (transcript) in
+                //set the button. self because of closure method
+                self.setDefaultImage(forButton: andButton)
                 //write value of transcript in textField
                 forField.text = transcript
             }
             } catch let error as NSError {
                 //todo: give error with alert
                 print(error.localizedDescription)
+                
+                //set the button to default
+                setDefaultImage(forButton: andButton)
             }
         }
     }
@@ -63,7 +84,6 @@ class AddViewController: UIViewController {
     
     
     private func getTranscription(withHandler: @escaping(_ transcript: String) -> ()) throws{
-        
         //kill old task
         if let recognitionTask = recognitionTask {
             recognitionTask.cancel()
@@ -82,12 +102,15 @@ class AddViewController: UIViewController {
         guard let inputNode = audioEngine.inputNode else {
             //todo: alert
             print("no input node found")
-            
+            //reset buttons
+            self.resetButtons()
             return
         }
         
         guard let recognitionRequest = recognitionRequest else {
             print("Could not make request")
+            //reset buttons
+            self.resetButtons()
             return
         }
         
@@ -114,6 +137,8 @@ class AddViewController: UIViewController {
             guard error == nil else {
                 //todo: alert
                 print("Could not create transcript")
+                //reset buttons
+                self.resetButtons()
                 return
             }
             
