@@ -41,6 +41,7 @@ class UrlListTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "urlCell", for: indexPath)
         let hotUrl = urlList[indexPath.row]
         cell.textLabel?.text = hotUrl.name
+        cell.detailTextLabel?.text = hotUrl.comment
         
         return cell
     }
@@ -65,8 +66,8 @@ class UrlListTableViewController: UITableViewController {
 
 extension UrlListTableViewController: HotUrlDelegate {
     
-    func hotUrlAdded(withName:String, andUrl: String){
-        let newUrl = HotUrl(name: withName, url: andUrl)
+    func hotUrlAdded(withName:String, andUrl: String, andComment: String){
+        let newUrl = HotUrl(name: withName, url: andUrl, comment: andComment)
         urlList.append(newUrl)
     }
 }

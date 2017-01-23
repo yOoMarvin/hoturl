@@ -11,6 +11,7 @@ import Foundation
 struct HotUrl {
     var name: String
     var url: String
+    var comment: String
     
     func getPrefixedUrl() -> String {
         if url.range(of: "^(http|https)", options: .regularExpression, range: nil, locale: nil) != nil {

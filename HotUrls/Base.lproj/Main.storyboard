@@ -14,17 +14,33 @@
         <scene sceneID="kfl-6c-NmD">
             <objects>
                 <tableViewController id="bGY-oC-BFa" customClass="UrlListTableViewController" customModule="HotUrls" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="XJa-cD-mqt">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" id="XJa-cD-mqt">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="urlCell" id="ihH-aJ-6ks">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="urlCell" textLabel="ZT8-Xd-dRi" detailTextLabel="Vko-IB-0uz" rowHeight="60" style="IBUITableViewCellStyleSubtitle" id="ihH-aJ-6ks">
+                                <rect key="frame" x="0.0" y="28" width="375" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ihH-aJ-6ks" id="ptP-oc-uVG">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="59"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ZT8-Xd-dRi">
+                                            <rect key="frame" x="15" y="6" width="39" height="28"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Vko-IB-0uz">
+                                            <rect key="frame" x="15" y="34" width="49" height="20"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
                                 <connections>
                                     <segue destination="QKd-1N-ieb" kind="show" identifier="detailView" id="NZd-Ej-CZJ"/>
@@ -61,7 +77,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="pK4-xz-dlQ">
-                                <rect key="frame" x="16" y="72" width="343" height="255"/>
+                                <rect key="frame" x="16" y="72" width="343" height="367.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Y5m-fd-eJW">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="77.5"/>
@@ -129,8 +145,41 @@
                                             </stackView>
                                         </subviews>
                                     </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="VIq-Z6-XzY">
+                                        <rect key="frame" x="0.0" y="225" width="343" height="77.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kommentar:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4gO-E8-I7w">
+                                                <rect key="frame" x="0.0" y="0.0" width="343" height="23.5"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="6hI-KY-R34">
+                                                <rect key="frame" x="0.0" y="33.5" width="343" height="44"/>
+                                                <subviews>
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sn6-GI-7Lk">
+                                                        <rect key="frame" x="0.0" y="0.0" width="284" height="44"/>
+                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DYK-pG-gOw">
+                                                        <rect key="frame" x="299" y="0.0" width="44" height="44"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="44" id="OMF-a7-DwQ"/>
+                                                            <constraint firstAttribute="height" constant="44" id="r8v-qB-Ijh"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Button" image="micro-default"/>
+                                                        <connections>
+                                                            <action selector="commentButtonTapped:" destination="Jma-fo-h2L" eventType="touchUpInside" id="dPF-xp-qxa"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HLh-n2-HuN">
-                                        <rect key="frame" x="0.0" y="225" width="343" height="30"/>
+                                        <rect key="frame" x="0.0" y="337.5" width="343" height="30"/>
                                         <state key="normal" title="Speichern"/>
                                         <connections>
                                             <action selector="saveTapped:" destination="Jma-fo-h2L" eventType="touchUpInside" id="Rpv-fh-kvk"/>
@@ -147,6 +196,8 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="commentAudioBtn" destination="DYK-pG-gOw" id="COt-8c-4x8"/>
+                        <outlet property="commentInput" destination="sn6-GI-7Lk" id="Tiw-hM-Ejr"/>
                         <outlet property="nameAudioBtn" destination="eR0-p1-blY" id="hfE-9h-d9C"/>
                         <outlet property="nameInput" destination="up7-NU-Vtd" id="yPJ-9h-mNH"/>
                         <outlet property="urlAudioBtn" destination="NQ0-RN-w4G" id="M0X-Yf-ONB"/>

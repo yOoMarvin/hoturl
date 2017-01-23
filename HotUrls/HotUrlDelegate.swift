@@ -9,5 +9,5 @@
 import Foundation
 
 protocol HotUrlDelegate {
-    func hotUrlAdded(withName:String, andUrl: String)
+    func hotUrlAdded(withName:String, andUrl: String, andComment: String)
 }
