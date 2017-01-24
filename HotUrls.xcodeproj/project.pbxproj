@@ -12,7 +12,7 @@
 		58046C0A1E33C71100590FFB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58046C081E33C71100590FFB /* Main.storyboard */; };
 		58046C0C1E33C71100590FFB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58046C0B1E33C71100590FFB /* Assets.xcassets */; };
 		58046C0F1E33C71100590FFB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58046C0D1E33C71100590FFB /* LaunchScreen.storyboard */; };
-		58046C1B1E33C9D900590FFB /* HotUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58046C1A1E33C9D900590FFB /* HotUrl.swift */; };
+		58046C1B1E33C9D900590FFB /* HotUrl+GetPrefixedUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58046C1A1E33C9D900590FFB /* HotUrl+GetPrefixedUrl.swift */; };
 		58046C1F1E33CA5200590FFB /* UrlResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58046C1E1E33CA5200590FFB /* UrlResource.swift */; };
 		58046C211E34E88700590FFB /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58046C201E34E88700590FFB /* AddViewController.swift */; };
 		58046C231E36781600590FFB /* HotUrlDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58046C221E36781600590FFB /* HotUrlDelegate.swift */; };
@@ -28,7 +28,7 @@
 		58046C0B1E33C71100590FFB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		58046C0E1E33C71100590FFB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		58046C101E33C71100590FFB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		58046C1A1E33C9D900590FFB /* HotUrl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HotUrl.swift; sourceTree = "<group>"; };
+		58046C1A1E33C9D900590FFB /* HotUrl+GetPrefixedUrl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HotUrl+GetPrefixedUrl.swift"; sourceTree = "<group>"; };
 		58046C1E1E33CA5200590FFB /* UrlResource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UrlResource.swift; sourceTree = "<group>"; };
 		58046C201E34E88700590FFB /* AddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		58046C221E36781600590FFB /* HotUrlDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HotUrlDelegate.swift; sourceTree = "<group>"; };
@@ -115,7 +115,7 @@
 		58046C261E37B0D800590FFB /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				58046C1A1E33C9D900590FFB /* HotUrl.swift */,
+				58046C1A1E33C9D900590FFB /* HotUrl+GetPrefixedUrl.swift */,
 				58046C1E1E33CA5200590FFB /* UrlResource.swift */,
 				58046C271E37B27300590FFB /* HotUrls.xcdatamodeld */,
 			);
@@ -195,7 +195,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				58046C1B1E33C9D900590FFB /* HotUrl.swift in Sources */,
+				58046C1B1E33C9D900590FFB /* HotUrl+GetPrefixedUrl.swift in Sources */,
 				58046C071E33C71100590FFB /* UrlListTableViewController.swift in Sources */,
 				58046C211E34E88700590FFB /* AddViewController.swift in Sources */,
 				58046C051E33C71100590FFB /* AppDelegate.swift in Sources */,

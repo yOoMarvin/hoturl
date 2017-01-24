@@ -8,12 +8,18 @@
 
 import Foundation
 
-struct HotUrl {
-    var name: String
-    var url: String
-    var comment: String
+extension HotUrl {
+
     
-    func getPrefixedUrl() -> String {
+    func getPrefixedUrl() -> String? {
+        guard let url = url else {
+            return nil
+        }
+        
+        //http or https at the beginning
+        // ok: http
+        // ok: https
+        // not ok: www.google.de/httperror
         if url.range(of: "^(http|https)", options: .regularExpression, range: nil, locale: nil) != nil {
             return url
         }

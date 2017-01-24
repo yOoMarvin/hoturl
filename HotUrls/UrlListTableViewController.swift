@@ -67,7 +67,7 @@ class UrlListTableViewController: UITableViewController {
 extension UrlListTableViewController: HotUrlDelegate {
     
     func hotUrlAdded(withName:String, andUrl: String, andComment: String){
-        let newUrl = HotUrl(name: withName, url: andUrl, comment: andComment)
+        let newUrl = appDelegate.urlResource.insertUrl(withName: withName, andUrl: andUrl, andComment: andComment)
         urlList.append(newUrl)
     }
 }

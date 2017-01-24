@@ -23,7 +23,12 @@ class UrlViewController: UIViewController {
             return
         }
         
-        if let url = URL(string: hotUrl.getPrefixedUrl()) {
+        guard let finalUrl = hotUrl.getPrefixedUrl() else {
+            print("no prefixed url")
+            return
+        }
+        
+        if let url = URL(string: finalUrl) {
             let request = URLRequest(url: url)
             webView.loadRequest(request)
         }

@@ -38,17 +38,31 @@ struct UrlResource {
     }
     
     
+    func insertUrl(withName: String, andUrl: String, andComment: String) -> HotUrl {
+        let newUrl = NSEntityDescription.insertNewObject(forEntityName: "HotUrl", into: persistentContainer.viewContext) as! HotUrl
+        newUrl.name = withName
+        newUrl.url = andUrl
+        newUrl.comment = andComment
+        
+        saveContext()
+        
+        return newUrl
+    }
+    
+    
+    
      func getList() -> [HotUrl] {
         //return a static array of hot url objects
         //array can be declared inside because it won't be changed outside
         var hotUrls = [HotUrl]()
         
-        hotUrls.append(HotUrl(name: "Interface Guidelines",
-                              url: "https://developer.apple.com/ios/human-interface-guidelines/overview/design-principles/",
-                              comment: "Interface guidlines from apple"))
-        hotUrls.append(HotUrl(name: "Spiegel",
-                              url: "https://spiegel.de",
-                              comment: "German news magazine"))
+        //deleted the static entries. Now fetched from core data
+        let request: NSFetchRequest<HotUrl> = HotUrl.fetchRequest()
+        do {
+            hotUrls = try persistentContainer.viewContext.fetch(request)
+        } catch {
+            print(error.localizedDescription)
+        }
         
         return hotUrls
     }
