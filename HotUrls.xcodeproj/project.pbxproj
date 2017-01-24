@@ -13,8 +13,7 @@
 		58046C0C1E33C71100590FFB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58046C0B1E33C71100590FFB /* Assets.xcassets */; };
 		58046C0F1E33C71100590FFB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58046C0D1E33C71100590FFB /* LaunchScreen.storyboard */; };
 		58046C1B1E33C9D900590FFB /* HotUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58046C1A1E33C9D900590FFB /* HotUrl.swift */; };
-		58046C1D1E33CA2A00590FFB /* UrlResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58046C1C1E33CA2A00590FFB /* UrlResource.swift */; };
-		58046C1F1E33CA5200590FFB /* ArrayResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58046C1E1E33CA5200590FFB /* ArrayResource.swift */; };
+		58046C1F1E33CA5200590FFB /* UrlResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58046C1E1E33CA5200590FFB /* UrlResource.swift */; };
 		58046C211E34E88700590FFB /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58046C201E34E88700590FFB /* AddViewController.swift */; };
 		58046C231E36781600590FFB /* HotUrlDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58046C221E36781600590FFB /* HotUrlDelegate.swift */; };
 		58046C251E3685BB00590FFB /* UrlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58046C241E3685BB00590FFB /* UrlViewController.swift */; };
@@ -29,8 +28,7 @@
 		58046C0E1E33C71100590FFB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		58046C101E33C71100590FFB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		58046C1A1E33C9D900590FFB /* HotUrl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HotUrl.swift; sourceTree = "<group>"; };
-		58046C1C1E33CA2A00590FFB /* UrlResource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UrlResource.swift; sourceTree = "<group>"; };
-		58046C1E1E33CA5200590FFB /* ArrayResource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayResource.swift; sourceTree = "<group>"; };
+		58046C1E1E33CA5200590FFB /* UrlResource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UrlResource.swift; sourceTree = "<group>"; };
 		58046C201E34E88700590FFB /* AddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		58046C221E36781600590FFB /* HotUrlDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HotUrlDelegate.swift; sourceTree = "<group>"; };
 		58046C241E3685BB00590FFB /* UrlViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UrlViewController.swift; sourceTree = "<group>"; };
@@ -66,6 +64,7 @@
 		58046C031E33C71100590FFB /* HotUrls */ = {
 			isa = PBXGroup;
 			children = (
+				58046C261E37B0D800590FFB /* CoreData */,
 				58046C191E33C7DF00590FFB /* resources */,
 				58046C181E33C7C200590FFB /* controller */,
 				58046C171E33C7BD00590FFB /* view */,
@@ -79,8 +78,7 @@
 			children = (
 				58046C041E33C71100590FFB /* AppDelegate.swift */,
 				58046C1A1E33C9D900590FFB /* HotUrl.swift */,
-				58046C1C1E33CA2A00590FFB /* UrlResource.swift */,
-				58046C1E1E33CA5200590FFB /* ArrayResource.swift */,
+				58046C1E1E33CA5200590FFB /* UrlResource.swift */,
 				58046C221E36781600590FFB /* HotUrlDelegate.swift */,
 			);
 			name = model;
@@ -112,6 +110,13 @@
 				58046C0D1E33C71100590FFB /* LaunchScreen.storyboard */,
 			);
 			name = resources;
+			sourceTree = "<group>";
+		};
+		58046C261E37B0D800590FFB /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = CoreData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,8 +198,7 @@
 				58046C051E33C71100590FFB /* AppDelegate.swift in Sources */,
 				58046C251E3685BB00590FFB /* UrlViewController.swift in Sources */,
 				58046C231E36781600590FFB /* HotUrlDelegate.swift in Sources */,
-				58046C1F1E33CA5200590FFB /* ArrayResource.swift in Sources */,
-				58046C1D1E33CA2A00590FFB /* UrlResource.swift in Sources */,
+				58046C1F1E33CA5200590FFB /* UrlResource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -358,6 +362,7 @@
 				58046C151E33C71100590FFB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
