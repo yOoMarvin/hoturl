@@ -62,6 +62,23 @@ class UrlListTableViewController: UITableViewController {
         }
     }
     
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete{
+            tableView.beginUpdates()
+            
+            let hotUrl = urlList[indexPath.row]
+            
+            appDelegate.urlResource.remove(hotUrl: hotUrl)
+            urlList.remove(at: indexPath.row)
+            
+            //Delete the fow from data source
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            
+            tableView.endUpdates()
+        }
+    }
+    
 }
 
 extension UrlListTableViewController: HotUrlDelegate {

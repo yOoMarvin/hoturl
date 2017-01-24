@@ -50,6 +50,11 @@ struct UrlResource {
     }
     
     
+    func remove(hotUrl: HotUrl) {
+        persistentContainer.viewContext.delete(hotUrl)
+        saveContext()
+    }
+    
     
      func getList() -> [HotUrl] {
         //return a static array of hot url objects
