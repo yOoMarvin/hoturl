@@ -17,6 +17,7 @@
 		58046C211E34E88700590FFB /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58046C201E34E88700590FFB /* AddViewController.swift */; };
 		58046C231E36781600590FFB /* HotUrlDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58046C221E36781600590FFB /* HotUrlDelegate.swift */; };
 		58046C251E3685BB00590FFB /* UrlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58046C241E3685BB00590FFB /* UrlViewController.swift */; };
+		58046C291E37B27300590FFB /* HotUrls.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 58046C271E37B27300590FFB /* HotUrls.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		58046C201E34E88700590FFB /* AddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		58046C221E36781600590FFB /* HotUrlDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HotUrlDelegate.swift; sourceTree = "<group>"; };
 		58046C241E3685BB00590FFB /* UrlViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UrlViewController.swift; sourceTree = "<group>"; };
+		58046C281E37B27300590FFB /* HotUrls.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HotUrls.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,8 +79,6 @@
 			isa = PBXGroup;
 			children = (
 				58046C041E33C71100590FFB /* AppDelegate.swift */,
-				58046C1A1E33C9D900590FFB /* HotUrl.swift */,
-				58046C1E1E33CA5200590FFB /* UrlResource.swift */,
 				58046C221E36781600590FFB /* HotUrlDelegate.swift */,
 			);
 			name = model;
@@ -115,6 +115,9 @@
 		58046C261E37B0D800590FFB /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				58046C1A1E33C9D900590FFB /* HotUrl.swift */,
+				58046C1E1E33CA5200590FFB /* UrlResource.swift */,
+				58046C271E37B27300590FFB /* HotUrls.xcdatamodeld */,
 			);
 			name = CoreData;
 			sourceTree = "<group>";
@@ -197,6 +200,7 @@
 				58046C211E34E88700590FFB /* AddViewController.swift in Sources */,
 				58046C051E33C71100590FFB /* AppDelegate.swift in Sources */,
 				58046C251E3685BB00590FFB /* UrlViewController.swift in Sources */,
+				58046C291E37B27300590FFB /* HotUrls.xcdatamodeld in Sources */,
 				58046C231E36781600590FFB /* HotUrlDelegate.swift in Sources */,
 				58046C1F1E33CA5200590FFB /* UrlResource.swift in Sources */,
 			);
@@ -365,6 +369,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		58046C271E37B27300590FFB /* HotUrls.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				58046C281E37B27300590FFB /* HotUrls.xcdatamodel */,
+			);
+			currentVersion = 58046C281E37B27300590FFB /* HotUrls.xcdatamodel */;
+			path = HotUrls.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 58046BF91E33C71100590FFB /* Project object */;
 }
