@@ -7,11 +7,39 @@
 //
 
 import Foundation
+import CoreData
 
 struct UrlResource {
     
+    //persistent container for core data
+    var persistentContainer: NSPersistentContainer =  {
+        let container = NSPersistentContainer(name: "HotUrls")
+        container.loadPersistentStores { (storeDescription, error) in
+            if let error = error {
+                let nserror = error as NSError
+                //fatal error for the purpose of this app ok...
+                fatalError("Fehler: \(nserror.localizedDescription)")
+            }
+        }
+        return container
+    }()
+    
+    func saveContext() {
+        let context = persistentContainer.viewContext
+        if context.hasChanges {
+            do {
+                try context.save()
+            } catch {
+                let nserror = error as NSError
+                //fatal error for the purpose of this app ok...
+                fatalError("Fehler: \(nserror.localizedDescription)")
+            }
+        }
+    }
+    
     
      func getList() -> [HotUrl] {
+        //return a static array of hot url objects
         //array can be declared inside because it won't be changed outside
         var hotUrls = [HotUrl]()
         
