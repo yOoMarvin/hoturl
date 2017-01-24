@@ -18,6 +18,7 @@
 		58046C231E36781600590FFB /* HotUrlDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58046C221E36781600590FFB /* HotUrlDelegate.swift */; };
 		58046C251E3685BB00590FFB /* UrlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58046C241E3685BB00590FFB /* UrlViewController.swift */; };
 		58046C291E37B27300590FFB /* HotUrls.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 58046C271E37B27300590FFB /* HotUrls.xcdatamodeld */; };
+		58046C2B1E37B98500590FFB /* preload.json in Resources */ = {isa = PBXBuildFile; fileRef = 58046C2A1E37B98500590FFB /* preload.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		58046C221E36781600590FFB /* HotUrlDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HotUrlDelegate.swift; sourceTree = "<group>"; };
 		58046C241E3685BB00590FFB /* UrlViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UrlViewController.swift; sourceTree = "<group>"; };
 		58046C281E37B27300590FFB /* HotUrls.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HotUrls.xcdatamodel; sourceTree = "<group>"; };
+		58046C2A1E37B98500590FFB /* preload.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = preload.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,7 @@
 		58046C261E37B0D800590FFB /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				58046C2A1E37B98500590FFB /* preload.json */,
 				58046C1A1E33C9D900590FFB /* HotUrl+GetPrefixedUrl.swift */,
 				58046C1E1E33CA5200590FFB /* UrlResource.swift */,
 				58046C271E37B27300590FFB /* HotUrls.xcdatamodeld */,
@@ -185,6 +188,7 @@
 				58046C0F1E33C71100590FFB /* LaunchScreen.storyboard in Resources */,
 				58046C0C1E33C71100590FFB /* Assets.xcassets in Resources */,
 				58046C0A1E33C71100590FFB /* Main.storyboard in Resources */,
+				58046C2B1E37B98500590FFB /* preload.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

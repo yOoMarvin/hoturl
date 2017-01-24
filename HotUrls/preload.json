@@ -1,0 +1,10 @@
+{
+    "urls": [
+             {
+             "name": "iOS Human Interface Guidlines",
+             "url": "https://developer.apple.com/ios/human-interface-guidelines/overview/design-principles/",
+             "comment": "Interface Guidlines for iOS by Apple"
+             }
+             
+    ]
+}

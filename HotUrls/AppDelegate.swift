@@ -10,6 +10,8 @@ import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
+    
+    let ISPRELOADED = "isPreloaded"
 
     var window: UIWindow?
     //init resource model - should actually not be coded here...
@@ -18,6 +20,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        startPreload()
+        
         return true
     }
 
@@ -41,6 +46,53 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    }
+    
+    
+    
+    //preload
+    private func startPreload() {
+        //use user defaults, so preload is only added once
+        if UserDefaults.standard.bool(forKey: ISPRELOADED){
+            return
+        }
+        
+        let urls = readPreload()
+        let _ = urlResource.insertUrl(withName: urls["name"]!, andUrl: urls["url"]!, andComment: urls["comment"]!)
+        
+        //set user default
+        UserDefaults.standard.set(true, forKey: ISPRELOADED)
+    }
+    
+    private func readPreload() -> [String: String] {
+        var preparedUrls = [String: String]()
+        //reference in file system
+        let preloadFileUrl = Bundle.main.url(forResource: "preload", withExtension: "json")
+        
+        do {
+            guard let fileUrl = preloadFileUrl else {
+                return preparedUrls
+            }
+            let data = try Data(contentsOf: fileUrl)
+            let json = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as! NSDictionary
+            let urlArray = json["urls"] as! NSArray
+            for url in urlArray{
+                let urlDict = url as! NSDictionary
+                let name = urlDict["name"] as! String
+                let url = urlDict["url"] as! String
+                let comment = urlDict["comment"] as! String
+                
+                //only one entry in preload.json so elements can be added like this
+                //otherwise another data type is needed
+                preparedUrls["name"] = name
+                preparedUrls["url"] = url
+                preparedUrls["comment"] = comment
+            }
+        }catch {
+            print(error.localizedDescription)
+        }
+        
+        return preparedUrls
     }
 
 
