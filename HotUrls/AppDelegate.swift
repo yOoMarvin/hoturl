@@ -58,7 +58,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         let urls = readPreload()
-        let _ = urlResource.insertUrl(withName: urls["name"]!, andUrl: urls["url"]!, andComment: urls["comment"]!)
+        for (urlName, urlAdress) in urls {
+            let _ = urlResource.insertUrl(withName: urlName, andUrl: urlAdress)
+        }
         
         //set user default
         UserDefaults.standard.set(true, forKey: ISPRELOADED)
@@ -73,22 +75,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             guard let fileUrl = preloadFileUrl else {
                 return preparedUrls
             }
+            
             let data = try Data(contentsOf: fileUrl)
             let json = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as! NSDictionary
+            
             let urlArray = json["urls"] as! NSArray
-            for url in urlArray{
+            for url in urlArray {
                 let urlDict = url as! NSDictionary
                 let name = urlDict["name"] as! String
                 let url = urlDict["url"] as! String
-                let comment = urlDict["comment"] as! String
                 
-                //only one entry in preload.json so elements can be added like this
-                //otherwise another data type is needed
-                preparedUrls["name"] = name
-                preparedUrls["url"] = url
-                preparedUrls["comment"] = comment
+                preparedUrls[name] = url
             }
-        }catch {
+            
+        } catch {
             print(error.localizedDescription)
         }
         

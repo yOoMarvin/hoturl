@@ -26,12 +26,10 @@ class AddViewController: UIViewController {
     //outlets for Audio Button elements
     @IBOutlet weak var nameAudioBtn: UIButton!
     @IBOutlet weak var urlAudioBtn: UIButton!
-    @IBOutlet weak var commentAudioBtn: UIButton!
     
     //Outlets for text field elements
     @IBOutlet weak var nameInput: UITextField!
     @IBOutlet weak var urlInput: UITextField!
-    @IBOutlet weak var commentInput: UITextField!
     
     //button actions
     @IBAction func nameButtonTapped(_ sender: Any) {
@@ -42,20 +40,15 @@ class AddViewController: UIViewController {
         speechInput(forField: urlInput, andButton: urlAudioBtn)
     }
     
-    @IBAction func commentButtonTapped(_ sender: Any) {
-        speechInput(forField: commentInput, andButton: commentAudioBtn)
-    }
     //save action
-    
     @IBAction func saveTapped(_ sender: Any) {
         guard let name = nameInput.text,
-            let url = urlInput.text,
-            let comment = commentInput.text else {
+            let url = urlInput.text else {
             print("name or url not set")
             return
         }
         //let hotUrl = HotUrl(name: name, url: url, comment: comment)
-        delegate?.hotUrlAdded(withName: name, andUrl: url, andComment: comment)
+        delegate?.hotUrlAdded(withName: name, andUrl: url)
         let _ = navigationController?.popViewController(animated: true)
     }
     
@@ -77,7 +70,6 @@ class AddViewController: UIViewController {
     private func resetButtons() {
         setDefaultImage(forButton: nameAudioBtn)
         setDefaultImage(forButton: urlAudioBtn)
-        setDefaultImage(forButton: commentAudioBtn)
     }
     
     

@@ -41,12 +41,11 @@ class UrlListTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "urlCell", for: indexPath)
         let hotUrl = urlList[indexPath.row]
         cell.textLabel?.text = hotUrl.name
-        cell.detailTextLabel?.text = hotUrl.comment
         
         return cell
     }
     
-    //segue (actions)
+    //Preparation for navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "addUrl" {
             let dst = segue.destination as! AddViewController
@@ -83,8 +82,8 @@ class UrlListTableViewController: UITableViewController {
 
 extension UrlListTableViewController: HotUrlDelegate {
     
-    func hotUrlAdded(withName:String, andUrl: String, andComment: String){
-        let newUrl = appDelegate.urlResource.insertUrl(withName: withName, andUrl: andUrl, andComment: andComment)
+    func hotUrlAdded(withName:String, andUrl: String){
+        let newUrl = appDelegate.urlResource.insertUrl(withName: withName, andUrl: andUrl)
         urlList.append(newUrl)
     }
 }

@@ -9,62 +9,80 @@
 import Foundation
 import CoreData
 
-struct UrlResource {
+class UrlResource {
     
-    //persistent container for core data
-    var persistentContainer: NSPersistentContainer =  {
-        let container = NSPersistentContainer(name: "HotUrls")
-        container.loadPersistentStores { (storeDescription, error) in
-            if let error = error {
-                let nserror = error as NSError
-                //fatal error for the purpose of this app ok...
-                fatalError("Fehler: \(nserror.localizedDescription)")
-            }
+    private lazy var managedObjectModel: NSManagedObjectModel = {
+        let url = Bundle.main.url(forResource: "HotUrls", withExtension: "momd")!
+        let model = NSManagedObjectModel(contentsOf: url)!
+        
+        return model
+    }()
+    
+    private lazy var storeCoordinator: NSPersistentStoreCoordinator = {
+        let coordinator = NSPersistentStoreCoordinator(managedObjectModel: self.managedObjectModel)
+        
+        let url = self.documentDir.appendingPathComponent("HotUrls.sqlite")
+        
+        do {
+            try coordinator.addPersistentStore(ofType: NSSQLiteStoreType, configurationName: nil, at: url, options: nil)
+        } catch {
+            print(error)
         }
-        return container
+        
+        return coordinator
+    }()
+    
+    lazy var managedContext: NSManagedObjectContext = {
+        var context = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
+        
+        context.persistentStoreCoordinator = self.storeCoordinator
+        
+        return context
+    }()
+    
+    lazy var documentDir: NSURL = {
+        let allUrls = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        
+        return allUrls.first! as NSURL
     }()
     
     func saveContext() {
-        let context = persistentContainer.viewContext
-        if context.hasChanges {
+        if managedContext.hasChanges {
             do {
-                try context.save()
+                try managedContext.save()
+                
             } catch {
                 let nserror = error as NSError
-                //fatal error for the purpose of this app ok...
-                fatalError("Fehler: \(nserror.localizedDescription)")
+                //fatal error for the purpose of this app is ok...
+                fatalError("Error: \(nserror.localizedDescription)")
             }
         }
     }
     
-    
-    func insertUrl(withName: String, andUrl: String, andComment: String) -> HotUrl {
-        let newUrl = NSEntityDescription.insertNewObject(forEntityName: "HotUrl", into: persistentContainer.viewContext) as! HotUrl
+    func insertUrl(withName: String, andUrl: String) -> HotUrl {
+        let newUrl = NSEntityDescription.insertNewObject(forEntityName: "HotUrl", into: managedContext) as! HotUrl
+        
         newUrl.name = withName
         newUrl.url = andUrl
-        newUrl.comment = andComment
         
         saveContext()
         
         return newUrl
     }
     
-    
     func remove(hotUrl: HotUrl) {
-        persistentContainer.viewContext.delete(hotUrl)
+        managedContext.delete(hotUrl)
         saveContext()
     }
     
-    
-     func getList() -> [HotUrl] {
-        //return a static array of hot url objects
-        //array can be declared inside because it won't be changed outside
-        var hotUrls = [HotUrl]()
+    func getList() -> [HotUrl] {
         
-        //deleted the static entries. Now fetched from core data
+        var hotUrls = [HotUrl]()
         let request: NSFetchRequest<HotUrl> = HotUrl.fetchRequest()
+        
         do {
-            hotUrls = try persistentContainer.viewContext.fetch(request)
+            hotUrls = try managedContext.fetch(request)
+            
         } catch {
             print(error.localizedDescription)
         }
