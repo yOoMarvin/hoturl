@@ -10,7 +10,13 @@ import Foundation
 import CoreData
 
 class UrlResource {
+    //NOTE:
+    //Actually there should be an implementation of the newer core data stack form iOS 10
+    //Took the old one because there have to be made several adaptions for the share extension
+    //Focus on the share extension for learning purposes
     
+    
+    //get the data model from the resource
     private lazy var managedObjectModel: NSManagedObjectModel = {
         let url = Bundle.main.url(forResource: "HotUrls", withExtension: "momd")!
         let model = NSManagedObjectModel(contentsOf: url)!
@@ -20,7 +26,6 @@ class UrlResource {
     
     private lazy var storeCoordinator: NSPersistentStoreCoordinator = {
         let coordinator = NSPersistentStoreCoordinator(managedObjectModel: self.managedObjectModel)
-        
         let url = self.documentDir.appendingPathComponent("HotUrls.sqlite")
         
         do {
@@ -32,6 +37,8 @@ class UrlResource {
         return coordinator
     }()
     
+    //Managed Context:
+    //responsible for requests, changes etc.
     lazy var managedContext: NSManagedObjectContext = {
         var context = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
         
@@ -40,12 +47,15 @@ class UrlResource {
         return context
     }()
     
+    //
     lazy var documentDir: NSURL = {
         let allUrls = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         
         return allUrls.first! as NSURL
     }()
     
+    
+    //save changes
     func saveContext() {
         if managedContext.hasChanges {
             do {
@@ -59,6 +69,7 @@ class UrlResource {
         }
     }
     
+    //add a new url
     func insertUrl(withName: String, andUrl: String) -> HotUrl {
         let newUrl = NSEntityDescription.insertNewObject(forEntityName: "HotUrl", into: managedContext) as! HotUrl
         
@@ -70,19 +81,19 @@ class UrlResource {
         return newUrl
     }
     
+    //remove a url
     func remove(hotUrl: HotUrl) {
         managedContext.delete(hotUrl)
         saveContext()
     }
     
+    //get the existing urls from core data
     func getList() -> [HotUrl] {
-        
         var hotUrls = [HotUrl]()
         let request: NSFetchRequest<HotUrl> = HotUrl.fetchRequest()
         
         do {
             hotUrls = try managedContext.fetch(request)
-            
         } catch {
             print(error.localizedDescription)
         }

@@ -17,6 +17,7 @@ class AddViewController: UIViewController {
     //speech input handled in controller here... 
     //should not be done in real world up but is ok for this purpose
     
+    //variables for speech tasks
     private let audioEngine = AVAudioEngine()
     private let speechRecognizer = SFSpeechRecognizer(locale: Locale.current)!
     
@@ -47,8 +48,9 @@ class AddViewController: UIViewController {
             print("name or url not set")
             return
         }
-        //let hotUrl = HotUrl(name: name, url: url, comment: comment)
+        //give the action to the delegate and add the url
         delegate?.hotUrlAdded(withName: name, andUrl: url)
+        //navigate to the root of navigationcontroller
         let _ = navigationController?.popViewController(animated: true)
     }
     

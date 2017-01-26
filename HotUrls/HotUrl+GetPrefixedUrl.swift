@@ -8,9 +8,9 @@
 
 import Foundation
 
+//extension for data model hoturl
 extension HotUrl {
 
-    
     func getPrefixedUrl() -> String? {
         guard let url = url else {
             return nil

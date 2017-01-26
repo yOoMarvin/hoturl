@@ -25,11 +25,15 @@ class UrlListTableViewController: UITableViewController {
         urlList = appDelegate.urlResource.getList()
     }
     
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         
         urlList = [HotUrl]()
     }
+    
+    
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return urlList.count
@@ -61,7 +65,7 @@ class UrlListTableViewController: UITableViewController {
         }
     }
     
-    
+    //action for delete
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete{
             tableView.beginUpdates()
@@ -80,6 +84,7 @@ class UrlListTableViewController: UITableViewController {
     
 }
 
+//extension for the function in the delegate protocol
 extension UrlListTableViewController: HotUrlDelegate {
     
     func hotUrlAdded(withName:String, andUrl: String){
