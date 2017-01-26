@@ -9,10 +9,20 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>New HotUrl.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>58046C001E33C71100590FFB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>58046C2F1E3A75AC00590FFB</key>
 		<dict>
 			<key>primary</key>
 			<true/>

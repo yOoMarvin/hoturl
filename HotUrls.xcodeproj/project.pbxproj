@@ -19,7 +19,36 @@
 		58046C251E3685BB00590FFB /* UrlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58046C241E3685BB00590FFB /* UrlViewController.swift */; };
 		58046C291E37B27300590FFB /* HotUrls.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 58046C271E37B27300590FFB /* HotUrls.xcdatamodeld */; };
 		58046C2B1E37B98500590FFB /* preload.json in Resources */ = {isa = PBXBuildFile; fileRef = 58046C2A1E37B98500590FFB /* preload.json */; };
+		58046C331E3A75AC00590FFB /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58046C321E3A75AC00590FFB /* ShareViewController.swift */; };
+		58046C361E3A75AC00590FFB /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58046C341E3A75AC00590FFB /* MainInterface.storyboard */; };
+		58046C3A1E3A75AC00590FFB /* New HotUrl.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 58046C301E3A75AC00590FFB /* New HotUrl.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		58046C3F1E3A75DD00590FFB /* UrlResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58046C1E1E33CA5200590FFB /* UrlResource.swift */; };
+		58046C401E3A75ED00590FFB /* HotUrls.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 58046C271E37B27300590FFB /* HotUrls.xcdatamodeld */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		58046C381E3A75AC00590FFB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 58046BF91E33C71100590FFB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 58046C2F1E3A75AC00590FFB;
+			remoteInfo = "New HotUrl";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		58046C3E1E3A75AC00590FFB /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				58046C3A1E3A75AC00590FFB /* New HotUrl.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		58046C011E33C71100590FFB /* HotUrls.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HotUrls.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -36,10 +65,21 @@
 		58046C241E3685BB00590FFB /* UrlViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UrlViewController.swift; sourceTree = "<group>"; };
 		58046C281E37B27300590FFB /* HotUrls.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HotUrls.xcdatamodel; sourceTree = "<group>"; };
 		58046C2A1E37B98500590FFB /* preload.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = preload.json; sourceTree = "<group>"; };
+		58046C301E3A75AC00590FFB /* New HotUrl.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "New HotUrl.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		58046C321E3A75AC00590FFB /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
+		58046C351E3A75AC00590FFB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		58046C371E3A75AC00590FFB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		58046BFE1E33C71100590FFB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		58046C2D1E3A75AC00590FFB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -53,6 +93,7 @@
 			isa = PBXGroup;
 			children = (
 				58046C031E33C71100590FFB /* HotUrls */,
+				58046C311E3A75AC00590FFB /* New HotUrl */,
 				58046C021E33C71100590FFB /* Products */,
 			);
 			sourceTree = "<group>";
@@ -61,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				58046C011E33C71100590FFB /* HotUrls.app */,
+				58046C301E3A75AC00590FFB /* New HotUrl.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -125,6 +167,16 @@
 			name = CoreData;
 			sourceTree = "<group>";
 		};
+		58046C311E3A75AC00590FFB /* New HotUrl */ = {
+			isa = PBXGroup;
+			children = (
+				58046C321E3A75AC00590FFB /* ShareViewController.swift */,
+				58046C341E3A75AC00590FFB /* MainInterface.storyboard */,
+				58046C371E3A75AC00590FFB /* Info.plist */,
+			);
+			path = "New HotUrl";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,15 +187,34 @@
 				58046BFD1E33C71100590FFB /* Sources */,
 				58046BFE1E33C71100590FFB /* Frameworks */,
 				58046BFF1E33C71100590FFB /* Resources */,
+				58046C3E1E3A75AC00590FFB /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				58046C391E3A75AC00590FFB /* PBXTargetDependency */,
 			);
 			name = HotUrls;
 			productName = HotUrls;
 			productReference = 58046C011E33C71100590FFB /* HotUrls.app */;
 			productType = "com.apple.product-type.application";
+		};
+		58046C2F1E3A75AC00590FFB /* New HotUrl */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 58046C3D1E3A75AC00590FFB /* Build configuration list for PBXNativeTarget "New HotUrl" */;
+			buildPhases = (
+				58046C2C1E3A75AC00590FFB /* Sources */,
+				58046C2D1E3A75AC00590FFB /* Frameworks */,
+				58046C2E1E3A75AC00590FFB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "New HotUrl";
+			productName = "New HotUrl";
+			productReference = 58046C301E3A75AC00590FFB /* New HotUrl.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -156,6 +227,11 @@
 				ORGANIZATIONNAME = "Marvin Messenzehl";
 				TargetAttributes = {
 					58046C001E33C71100590FFB = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = W8TNV9SRPE;
+						ProvisioningStyle = Automatic;
+					};
+					58046C2F1E3A75AC00590FFB = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = W8TNV9SRPE;
 						ProvisioningStyle = Automatic;
@@ -176,6 +252,7 @@
 			projectRoot = "";
 			targets = (
 				58046C001E33C71100590FFB /* HotUrls */,
+				58046C2F1E3A75AC00590FFB /* New HotUrl */,
 			);
 		};
 /* End PBXProject section */
@@ -189,6 +266,14 @@
 				58046C0C1E33C71100590FFB /* Assets.xcassets in Resources */,
 				58046C0A1E33C71100590FFB /* Main.storyboard in Resources */,
 				58046C2B1E37B98500590FFB /* preload.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		58046C2E1E3A75AC00590FFB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				58046C361E3A75AC00590FFB /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,7 +295,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		58046C2C1E3A75AC00590FFB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				58046C401E3A75ED00590FFB /* HotUrls.xcdatamodeld in Sources */,
+				58046C331E3A75AC00590FFB /* ShareViewController.swift in Sources */,
+				58046C3F1E3A75DD00590FFB /* UrlResource.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		58046C391E3A75AC00590FFB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 58046C2F1E3A75AC00590FFB /* New HotUrl */;
+			targetProxy = 58046C381E3A75AC00590FFB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		58046C081E33C71100590FFB /* Main.storyboard */ = {
@@ -227,6 +330,14 @@
 				58046C0E1E33C71100590FFB /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		58046C341E3A75AC00590FFB /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				58046C351E3A75AC00590FFB /* Base */,
+			);
+			name = MainInterface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -328,6 +439,7 @@
 		58046C141E33C71100590FFB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = W8TNV9SRPE;
 				INFOPLIST_FILE = HotUrls/Info.plist;
@@ -341,12 +453,39 @@
 		58046C151E33C71100590FFB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = W8TNV9SRPE;
 				INFOPLIST_FILE = HotUrls/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.marvinmessenzehl.HotUrls;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		58046C3B1E3A75AC00590FFB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = W8TNV9SRPE;
+				INFOPLIST_FILE = "New HotUrl/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.marvinmessenzehl.HotUrls.New-HotUrl";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		58046C3C1E3A75AC00590FFB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = W8TNV9SRPE;
+				INFOPLIST_FILE = "New HotUrl/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.marvinmessenzehl.HotUrls.New-HotUrl";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -371,6 +510,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		58046C3D1E3A75AC00590FFB /* Build configuration list for PBXNativeTarget "New HotUrl" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				58046C3B1E3A75AC00590FFB /* Debug */,
+				58046C3C1E3A75AC00590FFB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 
